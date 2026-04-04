@@ -10,6 +10,10 @@ function ProductList({ onHomeClick }) {
     const [cart,setCart]=useState([]);
     const dispatch = useDispatch();
 
+    const handleAddToCart = (item) => {
+        dispatch(addItem(item));
+
+    };
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -257,6 +261,8 @@ function ProductList({ onHomeClick }) {
         e.preventDefault();
         setShowCart(false);
     };
+
+
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -289,7 +295,7 @@ function ProductList({ onHomeClick }) {
                                     <div><img className="product-image" src={planta.image} alt={planta.name}/></div>
                                     <p className="product-price">{planta.cost}</p>
                                     <p>{planta.description}</p>   
-                                    <div><button className="product-button" onClick="">Add to Cart</button></div>                                 
+                                    <div><button className="product-button" onClick={()=>handleAddToCart({name:planta.name,cost:planta.cost,image:planta.image})}>Add to Cart</button></div>                                 
                                 </div>
                              ))}   
                             </div>
