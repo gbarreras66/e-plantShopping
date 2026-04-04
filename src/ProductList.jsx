@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
+import { useSelector, useDispatch } from 'react-redux';
+
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
+    const [cart,setCart]=useState([]);
+    const dispatch = useDispatch();
 
     const plantsArray = [
         {
@@ -285,7 +289,7 @@ function ProductList({ onHomeClick }) {
                                     <div><img className="product-image" src={planta.image} alt={planta.name}/></div>
                                     <p className="product-price">{planta.cost}</p>
                                     <p>{planta.description}</p>   
-                                    <div className="product-button">Add to Cart</div>                                 
+                                    <div><button className="product-button" onClick="">Add to Cart</button></div>                                 
                                 </div>
                              ))}   
                             </div>
