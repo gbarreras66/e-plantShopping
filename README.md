@@ -6,4 +6,4 @@ This project developed three main components:
 2. ProductList.
 3. CartItems.
 
-The project was deployed and is available at: 
+The project was deployed and is available at: https://gbarreras66.github.io/e-plantShopping/
